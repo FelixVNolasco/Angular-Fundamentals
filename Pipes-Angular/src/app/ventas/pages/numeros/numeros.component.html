@@ -1,0 +1,26 @@
+<div class="text-color">
+    <h2>Decimal Pipe | Porcentaje</h2>
+    <p>Pipes utilizados para decimales y porcentajes.📝 - Usualemnte se encuentra en Angular Common</p>
+</div>
+
+<div class="grid text-color">
+    <div class="col-4">
+        <p-card header="Ventas Netas"
+                subheader="del presente año">
+           {{ ventasNetas | number:'1.2-2' }}
+        </p-card>        
+    </div>
+    <div class="col-4">
+        <p-card header="Ventas Netas"
+        subheader="del presente año">
+        {{ ventasNetas | currency:'MX ':'symbol-narrow':'1.4-4' }}
+        </p-card>        
+    </div>
+    <div class="col-4">
+        <p-card header="Ganancias porcentuales"
+        subheader="del presente año">
+        {{ porcentaje | percent:'1.2-2' }}
+        </p-card>        
+    </div>
+
+</div>

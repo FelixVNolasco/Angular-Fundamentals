@@ -1,0 +1,79 @@
+<div class="text-color">
+    <h2>Pipes No Comunes</h2>
+    <p>Usualmente se encuentran en el Common Module.</p>
+</div>
+
+<div class="grid text-color">
+    <div class="col col-md-6">
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+            <p>
+                Hola {{nombre}}! 😁
+                Nos alegra {{ genero | i18nSelect:generosMap}} a nuestro proximo Hackaton 🖥                
+            </p>
+            <button pButton 
+                (click)="cambiarPersona()"
+                label="Cambiar Persona"
+                class="p-button-help"
+            >
+            </button>
+    
+        </p-fieldset>       
+    </div>
+    <div class="col col-md-6">
+        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+            <p>
+                Actualmente {{clientes.length | i18nPlural:clientesMap}}
+            </p>
+            <button pButton 
+                (click)="eliminarPersona()"
+                label="Eliminar Persona"
+                class="p-button-danger"
+            >
+            </button>
+        </p-fieldset>       
+    </div>
+    <div class="col col-md-6">
+        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+
+            <b>Array Original</b>
+            <pre>{{clientes}}</pre>
+
+            <b>slice:0:2</b>
+            <pre>{{clientes | slice:0:2}}</pre>
+
+            <b>slice:1:2</b>
+            <pre>{{clientes | slice:1:2}}</pre>
+
+            <b>slice:3:4</b>
+            <pre>{{clientes | slice:3:4}}</pre>
+
+            <b>slice:0:4</b>
+            <pre>{{nombre | slice:0:4}}</pre>
+
+        </p-fieldset>       
+    </div>
+
+    <div class="col col-md-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <ul>
+                <li *ngFor="let item of persona | keyvalue">
+                    <b>{{item.key | titlecase}}:</b> {{item.value | titlecase}}
+                </li>
+            </ul>
+        </p-fieldset>       
+    </div>
+
+    
+    <div class="col col-md-6">
+        <p-fieldset legend="JSON Pipe" [toggleable]="true">
+            <p>{{persona | json}}</p>
+        </p-fieldset>       
+    </div>
+
+    <div class="col col-md-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <p *ngIf="!(promesa | async)">Cargando...</p>
+            <p> {{promesa | async}} </p>
+        </p-fieldset>       
+    </div>
+</div>

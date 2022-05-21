@@ -1,0 +1,15 @@
+<h1>¿Estas Seguro?</h1>
+<hr>
+<br>
+<p>
+    Está a punto de borrar a: {{data.superhero}}
+    <br>
+    ¿Desea Continuar?
+    <br>
+</p>
+
+<div fxLayout>
+    <button mat-button (click)="borrar()" color="warn">Borrar</button>  
+    <span class="spacer"></span>  
+    <button mat-button (click)="cerrar()">Cancelar</button>
+</div>
